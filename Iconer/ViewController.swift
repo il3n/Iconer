@@ -45,11 +45,11 @@ class ViewController: NSViewController {
     @IBAction func buttonPressed(_ sender: NSButton) {
         
         if (sender == appIconButton) {
-            print("appIconButton")
+            log.debug("appIconButton")
         } else if (sender == launchImageButton) {
-            print("launchImageButton")
+            log.debug("launchImageButton")
         } else if (sender == imageSetButton) {
-            print("imageSetButton")
+            log.debug("imageSetButton")
         }
     }
 }

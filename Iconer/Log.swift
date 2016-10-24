@@ -6,10 +6,22 @@
 //
 //
 
-import Cocoa
 import XCGLogger
 
-class Log: XCGLogger {
-    let log = XCGLogger.default
+public let log: XCGLogger = {
     
+    let result = XCGLogger.default
+    result.setup(level: logLevel, showLogIdentifier: false, showFunctionName: true, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: true, showDate: true, writeToFile: false, fileLevel: logLevel)
+    return result
+}()
+
+fileprivate var logLevel: XCGLogger.Level {
+
+    #if DEBUG
+        return .verbose
+    #else
+        return .none
+    #endif
 }
+
+

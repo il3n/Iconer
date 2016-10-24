@@ -685,7 +685,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yEl-Ny-amX">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yEl-Ny-amX" customClass="DragAndDropImageView" customModule="Iconer" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="252" height="230"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="FCc-OI-jaq"/>
                             </imageView>

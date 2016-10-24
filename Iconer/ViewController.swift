@@ -16,16 +16,15 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the viXCGLogger.frameworkew.
+  
+    }
+    
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
         setupView()
     }
-    
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-    }
-    
     
     @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var appIconButton: NSButton!
@@ -37,7 +36,7 @@ class ViewController: NSViewController {
     // 初始化view
     func setupView() {
         self.imageView.wantsLayer = true
-        self.imageView.layer?.backgroundColor = NSColor.gray.cgColor
+        self.imageView.layer?.backgroundColor = NSColor.lightGray.cgColor
         
         // button
         

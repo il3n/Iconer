@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,7 +654,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Iconer" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -679,11 +680,77 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Iconer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yEl-Ny-amX">
+                                <rect key="frame" x="20" y="20" width="252" height="230"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="FCc-OI-jaq"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-69-Dqv">
+                                <rect key="frame" x="306" y="204" width="160" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="JFN-TL-Zpm"/>
+                                    <constraint firstAttribute="height" constant="21" id="z5X-A2-2x8"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="AppIcon" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ckX-Xz-WRR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="buttonPressed:" target="XfG-lQ-9wD" id="4Z0-9T-SJc"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Gz-1R-G0G">
+                                <rect key="frame" x="306" y="117" width="160" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="YaK-k2-kYX"/>
+                                    <constraint firstAttribute="height" constant="21" id="xKj-ZX-qOt"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="LaunchImage" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jyJ-7y-C29">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="buttonPressed:" target="XfG-lQ-9wD" id="0dF-Wj-ycF"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-2A-DNV">
+                                <rect key="frame" x="306" y="27" width="160" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8zY-mg-CDO"/>
+                                    <constraint firstAttribute="width" constant="148" id="Le4-fb-NbL"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="ImageSet" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YP5-9N-jwa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="buttonPressed:" target="XfG-lQ-9wD" id="ydn-dS-4eh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="yEl-Ny-amX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Be6-W8-R92"/>
+                            <constraint firstAttribute="trailing" secondItem="5Gz-1R-G0G" secondAttribute="trailing" constant="20" id="Cg6-Op-uFW"/>
+                            <constraint firstAttribute="trailing" secondItem="K2v-2A-DNV" secondAttribute="trailing" constant="20" id="JOx-MR-0pC"/>
+                            <constraint firstAttribute="bottom" secondItem="yEl-Ny-amX" secondAttribute="bottom" constant="20" id="QJs-nC-NHC"/>
+                            <constraint firstItem="yEl-Ny-amX" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Z3Q-R2-hhg"/>
+                            <constraint firstAttribute="bottom" secondItem="K2v-2A-DNV" secondAttribute="bottom" constant="34" id="Zzp-eY-hav"/>
+                            <constraint firstAttribute="trailing" secondItem="Ua9-69-Dqv" secondAttribute="trailing" constant="20" id="fPx-UG-gzn"/>
+                            <constraint firstItem="5Gz-1R-G0G" firstAttribute="leading" secondItem="yEl-Ny-amX" secondAttribute="trailing" constant="40" id="iPb-vx-C9N"/>
+                            <constraint firstItem="Ua9-69-Dqv" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="38" id="kVN-Xb-x1i"/>
+                            <constraint firstItem="5Gz-1R-G0G" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="opf-gp-5gd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="appIconButton" destination="Ua9-69-Dqv" id="IQm-cx-b8f"/>
+                        <outlet property="imageSetButton" destination="K2v-2A-DNV" id="hnX-ox-xoy"/>
+                        <outlet property="imageView" destination="yEl-Ny-amX" id="r3G-zg-2Cc"/>
+                        <outlet property="launchImageButton" destination="5Gz-1R-G0G" id="aNn-cW-Xw5"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

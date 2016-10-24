@@ -11,7 +11,23 @@
 		F43288B61DBDAA5A008B3EBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43288B51DBDAA5A008B3EBC /* ViewController.swift */; };
 		F43288B81DBDAA5A008B3EBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43288B71DBDAA5A008B3EBC /* Assets.xcassets */; };
 		F43288BB1DBDAA5A008B3EBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43288B91DBDAA5A008B3EBC /* Main.storyboard */; };
+		F43288CA1DBDE78C008B3EBC /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43288C91DBDE78C008B3EBC /* XCGLogger.framework */; };
+		F43288D01DBDE895008B3EBC /* XCGLogger.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = F43288CF1DBDE895008B3EBC /* XCGLogger.framework.dSYM */; };
+		F43288D41DBDE8F7008B3EBC /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43288D31DBDE8F7008B3EBC /* Log.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F43288CC1DBDE821008B3EBC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				F43288D01DBDE895008B3EBC /* XCGLogger.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F43288B01DBDAA5A008B3EBC /* Iconer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iconer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +36,9 @@
 		F43288B71DBDAA5A008B3EBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F43288BA1DBDAA5A008B3EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F43288BC1DBDAA5A008B3EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43288C91DBDE78C008B3EBC /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/Mac/XCGLogger.framework; sourceTree = "<group>"; };
+		F43288CF1DBDE895008B3EBC /* XCGLogger.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = XCGLogger.framework.dSYM; path = Carthage/Build/Mac/XCGLogger.framework.dSYM; sourceTree = "<group>"; };
+		F43288D31DBDE8F7008B3EBC /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43288CA1DBDE78C008B3EBC /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +58,7 @@
 			children = (
 				F43288B21DBDAA5A008B3EBC /* Iconer */,
 				F43288B11DBDAA5A008B3EBC /* Products */,
+				F43288C81DBDE78C008B3EBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,11 +75,37 @@
 			children = (
 				F43288B31DBDAA5A008B3EBC /* AppDelegate.swift */,
 				F43288B51DBDAA5A008B3EBC /* ViewController.swift */,
+				F43288D21DBDE8D5008B3EBC /* Logger */,
 				F43288B71DBDAA5A008B3EBC /* Assets.xcassets */,
 				F43288B91DBDAA5A008B3EBC /* Main.storyboard */,
 				F43288BC1DBDAA5A008B3EBC /* Info.plist */,
 			);
 			path = Iconer;
+			sourceTree = "<group>";
+		};
+		F43288C81DBDE78C008B3EBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F43288D11DBDE89F008B3EBC /* XCGLogger */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F43288D11DBDE89F008B3EBC /* XCGLogger */ = {
+			isa = PBXGroup;
+			children = (
+				F43288CF1DBDE895008B3EBC /* XCGLogger.framework.dSYM */,
+				F43288C91DBDE78C008B3EBC /* XCGLogger.framework */,
+			);
+			name = XCGLogger;
+			sourceTree = "<group>";
+		};
+		F43288D21DBDE8D5008B3EBC /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				F43288D31DBDE8F7008B3EBC /* Log.swift */,
+			);
+			name = Logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +118,8 @@
 				F43288AC1DBDAA5A008B3EBC /* Sources */,
 				F43288AD1DBDAA5A008B3EBC /* Frameworks */,
 				F43288AE1DBDAA5A008B3EBC /* Resources */,
+				F43288CB1DBDE7A4008B3EBC /* ShellScript */,
+				F43288CC1DBDE821008B3EBC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -127,6 +176,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F43288CB1DBDE7A4008B3EBC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/XCGLogger.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F43288AC1DBDAA5A008B3EBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -134,6 +200,7 @@
 			files = (
 				F43288B61DBDAA5A008B3EBC /* ViewController.swift in Sources */,
 				F43288B41DBDAA5A008B3EBC /* AppDelegate.swift in Sources */,
+				F43288D41DBDE8F7008B3EBC /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +315,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KS8786N6FD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Iconer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.Iconer;
@@ -263,6 +334,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KS8786N6FD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Iconer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarvis.Iconer;
@@ -290,6 +365,7 @@
 				F43288C11DBDAA5A008B3EBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

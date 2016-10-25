@@ -53,6 +53,9 @@ class ViewController: NSViewController {
         // button
         textfield.isEditable = false
         textfield.isSelectable = false
+        
+        
+        imageSetButton.isHidden = true
     }
     
     private var now: String {

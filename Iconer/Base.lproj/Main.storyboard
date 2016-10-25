@@ -686,14 +686,18 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yEl-Ny-amX" customClass="DragAndDropImageView" customModule="Iconer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="20" width="252" height="230"/>
+                                <rect key="frame" x="20" y="34" width="284" height="198"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="Bhr-c5-A4k"/>
+                                    <constraint firstAttribute="height" constant="198" id="dxk-rz-Gkn"/>
+                                </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="FCc-OI-jaq"/>
                             </imageView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ua9-69-Dqv">
                                 <rect key="frame" x="306" y="204" width="160" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="JFN-TL-Zpm"/>
-                                    <constraint firstAttribute="height" constant="21" id="z5X-A2-2x8"/>
+                                    <constraint firstAttribute="height" constant="21" id="3fF-7i-FSK"/>
+                                    <constraint firstAttribute="width" constant="148" id="8BN-br-OKn"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="AppIcon" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ckX-Xz-WRR">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -704,10 +708,10 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Gz-1R-G0G">
-                                <rect key="frame" x="306" y="117" width="160" height="32"/>
+                                <rect key="frame" x="306" y="147" width="160" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="YaK-k2-kYX"/>
-                                    <constraint firstAttribute="height" constant="21" id="xKj-ZX-qOt"/>
+                                    <constraint firstAttribute="width" constant="148" id="64h-sv-K8P"/>
+                                    <constraint firstAttribute="height" constant="21" id="bXp-r0-EfV"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="LaunchImage" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jyJ-7y-C29">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -718,10 +722,9 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-2A-DNV">
-                                <rect key="frame" x="306" y="27" width="160" height="32"/>
+                                <rect key="frame" x="306" y="88" width="160" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="8zY-mg-CDO"/>
-                                    <constraint firstAttribute="width" constant="148" id="Le4-fb-NbL"/>
+                                    <constraint firstAttribute="width" constant="148" id="hOH-K6-V9Y"/>
                                 </constraints>
                                 <buttonCell key="cell" type="push" title="ImageSet" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YP5-9N-jwa">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -731,30 +734,77 @@
                                     <action selector="buttonPressed:" target="XfG-lQ-9wD" id="ydn-dS-4eh"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jPW-uh-0g5">
+                                <rect key="frame" x="306" y="27" width="112" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="eXW-rl-aJ5"/>
+                                    <constraint firstAttribute="height" constant="21" id="gYK-7R-4Ve"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="contents.json" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tHW-hh-L6o">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="buttonPressed:" target="XfG-lQ-9wD" id="sp5-BZ-AeV"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="An4-wY-YL5">
+                                <rect key="frame" x="18" y="9" width="444" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="cvf-wK-sB8"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="使用内置contents.json" id="60G-fJ-Biv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ybs-7T-JP8">
+                                <rect key="frame" x="418" y="33" width="42" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="IFi-cA-Puu"/>
+                                    <constraint firstAttribute="height" constant="21" id="KwS-A6-Vvb"/>
+                                </constraints>
+                                <buttonCell key="cell" type="roundRect" title="X" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tmE-ft-as1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="cellTitle"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" target="XfG-lQ-9wD" id="DfN-Na-eCy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="yEl-Ny-amX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Be6-W8-R92"/>
-                            <constraint firstAttribute="trailing" secondItem="5Gz-1R-G0G" secondAttribute="trailing" constant="20" id="Cg6-Op-uFW"/>
-                            <constraint firstAttribute="trailing" secondItem="K2v-2A-DNV" secondAttribute="trailing" constant="20" id="JOx-MR-0pC"/>
-                            <constraint firstAttribute="bottom" secondItem="yEl-Ny-amX" secondAttribute="bottom" constant="20" id="QJs-nC-NHC"/>
-                            <constraint firstItem="yEl-Ny-amX" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Z3Q-R2-hhg"/>
-                            <constraint firstAttribute="bottom" secondItem="K2v-2A-DNV" secondAttribute="bottom" constant="34" id="Zzp-eY-hav"/>
-                            <constraint firstAttribute="trailing" secondItem="Ua9-69-Dqv" secondAttribute="trailing" constant="20" id="fPx-UG-gzn"/>
-                            <constraint firstItem="5Gz-1R-G0G" firstAttribute="leading" secondItem="yEl-Ny-amX" secondAttribute="trailing" constant="40" id="iPb-vx-C9N"/>
-                            <constraint firstItem="Ua9-69-Dqv" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="38" id="kVN-Xb-x1i"/>
-                            <constraint firstItem="5Gz-1R-G0G" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="opf-gp-5gd"/>
+                            <constraint firstItem="jPW-uh-0g5" firstAttribute="top" secondItem="K2v-2A-DNV" secondAttribute="bottom" constant="40" id="129-60-rBo"/>
+                            <constraint firstItem="Ua9-69-Dqv" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="38" id="3FM-nA-i7M"/>
+                            <constraint firstItem="yEl-Ny-amX" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="424-tn-ajV"/>
+                            <constraint firstAttribute="trailing" secondItem="K2v-2A-DNV" secondAttribute="trailing" constant="20" id="7hA-mJ-4Us"/>
+                            <constraint firstItem="Ybs-7T-JP8" firstAttribute="top" secondItem="K2v-2A-DNV" secondAttribute="bottom" constant="40" id="DYN-ZV-FfR"/>
+                            <constraint firstAttribute="bottom" secondItem="An4-wY-YL5" secondAttribute="bottom" constant="9" id="Ku8-ZJ-wFz"/>
+                            <constraint firstAttribute="trailing" secondItem="Ua9-69-Dqv" secondAttribute="trailing" constant="20" id="L0u-kB-TFf"/>
+                            <constraint firstItem="yEl-Ny-amX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="38" id="OYg-PP-GpB"/>
+                            <constraint firstAttribute="trailing" secondItem="5Gz-1R-G0G" secondAttribute="trailing" constant="20" id="VmX-gc-caW"/>
+                            <constraint firstItem="5Gz-1R-G0G" firstAttribute="top" secondItem="Ua9-69-Dqv" secondAttribute="bottom" constant="36" id="Z2W-BE-rLY"/>
+                            <constraint firstItem="Ybs-7T-JP8" firstAttribute="leading" secondItem="jPW-uh-0g5" secondAttribute="trailing" constant="6" id="e8Z-Jx-0ud"/>
+                            <constraint firstItem="K2v-2A-DNV" firstAttribute="top" secondItem="5Gz-1R-G0G" secondAttribute="bottom" constant="38" id="q4g-kV-tcz"/>
+                            <constraint firstAttribute="trailing" secondItem="Ybs-7T-JP8" secondAttribute="trailing" constant="20" id="rse-xi-3Id"/>
+                            <constraint firstItem="An4-wY-YL5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="tD9-tZ-tq2"/>
+                            <constraint firstAttribute="trailing" secondItem="An4-wY-YL5" secondAttribute="trailing" constant="20" id="uOZ-wT-ANz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="appIconButton" destination="Ua9-69-Dqv" id="IQm-cx-b8f"/>
+                        <outlet property="cancelButton" destination="Ybs-7T-JP8" id="lqI-vf-MR4"/>
+                        <outlet property="contentJsonButton" destination="jPW-uh-0g5" id="GnV-zf-ihJ"/>
                         <outlet property="imageSetButton" destination="K2v-2A-DNV" id="hnX-ox-xoy"/>
                         <outlet property="imageView" destination="yEl-Ny-amX" id="r3G-zg-2Cc"/>
                         <outlet property="launchImageButton" destination="5Gz-1R-G0G" id="aNn-cW-Xw5"/>
+                        <outlet property="textfield" destination="An4-wY-YL5" id="xmS-Vn-8Hi"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-149" y="705"/>
         </scene>
     </scenes>
 </document>

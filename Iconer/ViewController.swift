@@ -41,7 +41,7 @@ class ViewController: NSViewController {
     // 初始化view
     func setupView() {
         
-        let size = screenSize()
+//        let size = screenSize()
 //        preferredContentSize = NSSize(width: CGFloat(size.width/2), height: CGFloat(size.height/2))
         
         self.imageView.wantsLayer = true

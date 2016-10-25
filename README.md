@@ -1,0 +1,1 @@
+自动生成appIcon和launchImage文件 支持外部导入contents.json

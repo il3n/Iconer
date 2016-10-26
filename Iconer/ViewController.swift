@@ -12,6 +12,18 @@ import Cocoa
 
 
 class ViewController: NSViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // 调整window size
+//        let (w, h) = screenSize()
+//        let percent: Float = 0.6
+//        let offset: Float = (1-percent)/2.0
+//        view.window?.setFrame(NSMakeRect(CGFloat(Float(w)*offset), CGFloat(Float(h) * offset), CGFloat(Float(w) * percent), CGFloat(Float(h) * percent)) , display: true)
+
+    }
+    
     override func viewWillAppear() {
         super.viewWillAppear()
         setupView()
@@ -41,8 +53,10 @@ class ViewController: NSViewController {
     // 初始化view
     func setupView() {
         
-//        let size = screenSize()
-//        preferredContentSize = NSSize(width: CGFloat(size.width/2), height: CGFloat(size.height/2))
+        self.view.window?.title = "Iconer"
+        self.view.window!.styleMask.remove(.resizable)
+        
+        
         
         self.imageView.wantsLayer = true
         self.imageView.layer?.backgroundColor = NSColor.lightGray.cgColor
@@ -54,8 +68,6 @@ class ViewController: NSViewController {
         textfield.isEditable = false
         textfield.isSelectable = false
         
-        
-        imageSetButton.isHidden = true
     }
     
     private var now: String {
@@ -238,8 +250,28 @@ class ViewController: NSViewController {
 
             
         } else if (iconType == .imageSet) {
-            // 解析普通图片
+            // 解析普通图片，默认把导入的图片当做3x图处理
             
+            let scaleString = dictionary["scale"] as! String
+            let scaleRange = scaleString.range(of: "x")
+            let scale = Int((scaleString.substring(to: (scaleRange?.lowerBound)!)))
+
+            var ratio: Float = 1.0
+            if (scale == 2) {
+                ratio = 1.5
+            } else if (scale == 1) {
+                ratio = 3
+            }
+            
+            let size = imageView.image?.size
+            width = Int((Float((size?.width)!) / ratio))
+            height = Int((Float((size?.height)!) / ratio))
+            
+            
+            iconName = String(width!)+"*"+String(height!)+".png"
+            
+            newDic["filename"] = iconName
+
         }
         
         
@@ -301,6 +333,7 @@ class ViewController: NSViewController {
 
     func browseFile(sender: AnyObject) {
         let dialog = NSOpenPanel()
+        dialog.directoryURL = URL(fileURLWithPath: NSHomeDirectory())
         dialog.title = "选择contents.json文件"
         dialog.showsResizeIndicator = true
         dialog.showsHiddenFiles = false
@@ -308,7 +341,7 @@ class ViewController: NSViewController {
         dialog.canCreateDirectories = true
         dialog.allowsMultipleSelection = false
         dialog.allowedFileTypes = ["json"]
-        
+    
         if (dialog.runModal() == NSModalResponseOK) {
             if let result = dialog.url {
                 textfield.stringValue = result.path

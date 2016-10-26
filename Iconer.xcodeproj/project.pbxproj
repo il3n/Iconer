@@ -18,6 +18,7 @@
 		F43288D81DBE0C2C008B3EBC /* appicon.json in Resources */ = {isa = PBXBuildFile; fileRef = F43288D71DBE0C2C008B3EBC /* appicon.json */; };
 		F43288DA1DBF2B08008B3EBC /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43288D91DBF2B08008B3EBC /* AppIcon.swift */; };
 		F43288DC1DBF6AE1008B3EBC /* launchimage.json in Resources */ = {isa = PBXBuildFile; fileRef = F43288DB1DBF6AE1008B3EBC /* launchimage.json */; };
+		F43288DE1DC0510E008B3EBC /* imageset.json in Resources */ = {isa = PBXBuildFile; fileRef = F43288DD1DC0510E008B3EBC /* imageset.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		F43288D71DBE0C2C008B3EBC /* appicon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appicon.json; sourceTree = "<group>"; };
 		F43288D91DBF2B08008B3EBC /* AppIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		F43288DB1DBF6AE1008B3EBC /* launchimage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchimage.json; sourceTree = "<group>"; };
+		F43288DD1DC0510E008B3EBC /* imageset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = imageset.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				F43288D51DBDF34A008B3EBC /* DragAndDropImageView.swift */,
 				F43288D71DBE0C2C008B3EBC /* appicon.json */,
 				F43288DB1DBF6AE1008B3EBC /* launchimage.json */,
+				F43288DD1DC0510E008B3EBC /* imageset.json */,
 				F43288D21DBDE8D5008B3EBC /* Logger */,
 				F43288B71DBDAA5A008B3EBC /* Assets.xcassets */,
 				F43288B91DBDAA5A008B3EBC /* Main.storyboard */,
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43288D81DBE0C2C008B3EBC /* appicon.json in Resources */,
+				F43288DE1DC0510E008B3EBC /* imageset.json in Resources */,
 				F43288B81DBDAA5A008B3EBC /* Assets.xcassets in Resources */,
 				F43288DC1DBF6AE1008B3EBC /* launchimage.json in Resources */,
 				F43288BB1DBDAA5A008B3EBC /* Main.storyboard in Resources */,

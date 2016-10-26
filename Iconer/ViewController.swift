@@ -8,9 +8,6 @@
 
 import Cocoa
 
-
-
-
 class ViewController: NSViewController {
     
     override func viewWillAppear() {
@@ -45,23 +42,18 @@ class ViewController: NSViewController {
         self.view.window?.title = "Iconer"
         self.view.window!.styleMask.remove(.resizable)
         
-        
-        
         self.imageView.wantsLayer = true
         self.imageView.layer?.backgroundColor = NSColor.lightGray.cgColor
-        
-        
         
         
         // button
         textfield.isEditable = false
         textfield.isSelectable = false
-        
     }
     
     private var now: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "mm-ss "
+        dateFormatter.dateFormat = "HH-mm-ss "
         let now = dateFormatter.string(from: Date())
         return now
     }

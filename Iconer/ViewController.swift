@@ -13,17 +13,6 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // 调整window size
-//        let (w, h) = screenSize()
-//        let percent: Float = 0.6
-//        let offset: Float = (1-percent)/2.0
-//        view.window?.setFrame(NSMakeRect(CGFloat(Float(w)*offset), CGFloat(Float(h) * offset), CGFloat(Float(w) * percent), CGFloat(Float(h) * percent)) , display: true)
-
-    }
-    
     override func viewWillAppear() {
         super.viewWillAppear()
         setupView()

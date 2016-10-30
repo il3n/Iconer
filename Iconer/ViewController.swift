@@ -183,16 +183,16 @@ class ViewController: NSViewController {
             let scale = Int((scaleString.substring(to: (scaleRange?.lowerBound)!)))
             
             let sizeRange = sizeString.range(of: "x")
-            let size = Int((sizeString.substring(to: (sizeRange?.lowerBound)!)))
+            let size = Float((sizeString.substring(to: (sizeRange?.lowerBound)!)))
             
             // 图片时间尺寸
 
-            width = size! * scale!
+            width = Int(size! * Float(scale!))
             height = width
             
             
             // 图片名字
-            iconName = "appicon-"+String(size!)+(scaleString != "1x" ? ("@"+scaleString) : "")+".png"
+            iconName = "appicon-"+sizeString.substring(to: (sizeRange?.lowerBound)!)+(scaleString != "1x" ? ("@"+scaleString) : "")+".png"
             newDic["filename"] = iconName
             
 //            log.debug("iconName:\(iconName), size:\(size), scale:\(scale), iconPixel:\(iconPixel)")

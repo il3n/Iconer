@@ -13,8 +13,6 @@ class DragAndDropImageView: NSImageView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         register(forDraggedTypes: [NSFilenamesPboardType, NSURLPboardType, NSPasteboardTypeTIFF])
-        
-        
     }
     
     let fileTypes = ["jpg", "jpeg", "png", "gif", "bmp"]

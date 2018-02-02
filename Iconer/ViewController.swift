@@ -173,6 +173,9 @@ class ViewController: NSViewController {
         var width: Int?
         var height: Int?
         var iconName: String?
+        var hasAlpha = true
+        var fileType:NSBitmapImageFileType
+        fileType = .PNG
         
         if (iconType == .appIcon) {
             // 解析appIcon
@@ -186,16 +189,21 @@ class ViewController: NSViewController {
             let size = Float((sizeString.substring(to: (sizeRange?.lowerBound)!)))
             
             // 图片时间尺寸
-
+            var suffix = ".png"
             width = Int(size! * Float(scale!))
             height = width
-            
+            if (width! >= 1024 && height! >= 1024) {
+                hasAlpha = false
+                suffix = ".jpg"
+                fileType = .JPEG
+                log.debug("hasAlpha:\(hasAlpha)")
+            }
             
             // 图片名字
-            iconName = "appicon-"+sizeString.substring(to: (sizeRange?.lowerBound)!)+(scaleString != "1x" ? ("@"+scaleString) : "")+".png"
+            iconName = "appicon-"+sizeString.substring(to: (sizeRange?.lowerBound)!)+(scaleString != "1x" ? ("@"+scaleString) : "")+suffix
             newDic["filename"] = iconName
             
-//            log.debug("iconName:\(iconName), size:\(size), scale:\(scale), iconPixel:\(iconPixel)")
+            log.debug("iconName:\(iconName!), size:\(size!), scale:\(scale!)")
 
 
             
@@ -261,7 +269,7 @@ class ViewController: NSViewController {
             let fileManger = FileManager.default
             let imagePath = dirPath! + "/" + iname
             if !fileManger.fileExists(atPath: imagePath) {
-                if saveImage(image: scaleImageToSize(width: width!, height: height!), toPath: imagePath) {
+                if saveImage(image: scaleImageToSize(width: width!, height: height!, hasAlpha: hasAlpha), toPath: imagePath, fileType: fileType) {
                     log.debug("图片保存成功")
                 } else {
                     log.debug("图片保存失败")
@@ -332,11 +340,11 @@ class ViewController: NSViewController {
     
     
     // 根据原始图片、图片尺寸列表创建一组图片
-    func scaleImageToSize(width: Int, height: Int) -> NSImage? {
-        return imageView.image?.resizeImage(width: width, height: height)
+    func scaleImageToSize(width: Int, height: Int, hasAlpha: Bool) -> NSImage? {
+        return imageView.image?.resizeImage(width: width, height: height, hasAlpha: hasAlpha)
     }
     
-    func saveImage(image: NSImage?, toPath: String) -> Bool {
+    func saveImage(image: NSImage?, toPath: String, fileType: NSBitmapImageFileType) -> Bool {
         guard image != nil else {
             return false
         }
@@ -345,7 +353,10 @@ class ViewController: NSViewController {
         let filePath = NSURL(fileURLWithPath: toPath) as URL
         var result = true
         do {
-            try NSBitmapImageRep(data: imageData)?.representation(using: NSPNGFileType, properties: [:])?.write(to: filePath, options: .atomic)
+//            try NSBitmapImageRep(data: imageData)?.representation(using: NSPNGFileType, properties: [:])?.write(to: filePath, options: .atomic)
+
+            try NSBitmapImageRep(data: imageData)?.representation(using: fileType, properties: [:])?.write(to: filePath, options: .atomic)
+
             
         } catch  {
             result = false
@@ -387,13 +398,17 @@ class ViewController: NSViewController {
 
 
 extension NSImage {
-    func resizeImage(width: Int, height: Int) -> NSImage? {
+    func resizeImage(width: Int, height: Int, hasAlpha: Bool) -> NSImage? {
         
         guard self.isValid else {
             return nil
         }
+        if (width >= 1024) {
+            log.debug("width is 1024")
+        }
         
-        if let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: width, pixelsHigh: height, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSCalibratedRGBColorSpace, bytesPerRow: 0, bitsPerPixel: 0) {
+        let samplesPerPixel = 4 //hasAlpha ? 4 : 3
+        if let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: width, pixelsHigh: height, bitsPerSample: 8, samplesPerPixel: samplesPerPixel, hasAlpha: true, isPlanar: false, colorSpaceName: NSCalibratedRGBColorSpace, bytesPerRow: 0, bitsPerPixel: 0) {
             
             NSGraphicsContext.saveGraphicsState()
             NSGraphicsContext.setCurrent(NSGraphicsContext(bitmapImageRep: rep))
@@ -402,6 +417,9 @@ extension NSImage {
             
             let img = NSImage(size: CGSize(width: width, height: height))
             img.addRepresentation(rep)
+            
+            
+            
             return img
         }
         
@@ -409,4 +427,15 @@ extension NSImage {
     }
 }
 
+//extension NSImage {
+//
+//    func alpha(_ value:CGFloat) -> NSImage {
+//
+//        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+//        draw(at: CGPoint.zero, blendMode: .normal, alpha: value)
+//        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        return newImage!
+//    }
+//}
 

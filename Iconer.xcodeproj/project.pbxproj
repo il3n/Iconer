@@ -16,7 +16,6 @@
 		F43288D41DBDE8F7008B3EBC /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43288D31DBDE8F7008B3EBC /* Log.swift */; };
 		F43288D61DBDF34A008B3EBC /* DragAndDropImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43288D51DBDF34A008B3EBC /* DragAndDropImageView.swift */; };
 		F43288D81DBE0C2C008B3EBC /* appicon.json in Resources */ = {isa = PBXBuildFile; fileRef = F43288D71DBE0C2C008B3EBC /* appicon.json */; };
-		F43288DA1DBF2B08008B3EBC /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43288D91DBF2B08008B3EBC /* AppIcon.swift */; };
 		F43288DC1DBF6AE1008B3EBC /* launchimage.json in Resources */ = {isa = PBXBuildFile; fileRef = F43288DB1DBF6AE1008B3EBC /* launchimage.json */; };
 		F43288DE1DC0510E008B3EBC /* imageset.json in Resources */ = {isa = PBXBuildFile; fileRef = F43288DD1DC0510E008B3EBC /* imageset.json */; };
 /* End PBXBuildFile section */
@@ -46,7 +45,6 @@
 		F43288D31DBDE8F7008B3EBC /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		F43288D51DBDF34A008B3EBC /* DragAndDropImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragAndDropImageView.swift; sourceTree = "<group>"; };
 		F43288D71DBE0C2C008B3EBC /* appicon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appicon.json; sourceTree = "<group>"; };
-		F43288D91DBF2B08008B3EBC /* AppIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 		F43288DB1DBF6AE1008B3EBC /* launchimage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchimage.json; sourceTree = "<group>"; };
 		F43288DD1DC0510E008B3EBC /* imageset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = imageset.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +83,6 @@
 			children = (
 				F43288B31DBDAA5A008B3EBC /* AppDelegate.swift */,
 				F43288B51DBDAA5A008B3EBC /* ViewController.swift */,
-				F43288D91DBF2B08008B3EBC /* AppIcon.swift */,
 				F43288D51DBDF34A008B3EBC /* DragAndDropImageView.swift */,
 				F43288D71DBE0C2C008B3EBC /* appicon.json */,
 				F43288DB1DBF6AE1008B3EBC /* launchimage.json */,
@@ -156,7 +153,7 @@
 				TargetAttributes = {
 					F43288AF1DBDAA5A008B3EBC = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = KS8786N6FD;
+						DevelopmentTeam = FB2K5AP27J;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -216,7 +213,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F43288DA1DBF2B08008B3EBC /* AppIcon.swift in Sources */,
 				F43288B61DBDAA5A008B3EBC /* ViewController.swift in Sources */,
 				F43288D61DBDF34A008B3EBC /* DragAndDropImageView.swift in Sources */,
 				F43288B41DBDAA5A008B3EBC /* AppDelegate.swift in Sources */,
@@ -334,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KS8786N6FD;
+				DEVELOPMENT_TEAM = FB2K5AP27J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -353,7 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KS8786N6FD;
+				DEVELOPMENT_TEAM = FB2K5AP27J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",

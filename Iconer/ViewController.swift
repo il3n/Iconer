@@ -13,7 +13,7 @@ class ViewController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         setupView()
-    }
+    } 
     
     enum IconType {
         case appIcon
